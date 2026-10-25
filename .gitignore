@@ -1,0 +1,8 @@
+node_modules/
+.nuxt/
+.output/
+.venv/
+__pycache__/
+*.db
+.env
+.pytest_cache/

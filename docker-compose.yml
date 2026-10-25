@@ -1,0 +1,22 @@
+# Optional dev helpers: a local inbox for emails (Mailhog) and Postgres.
+# Mail UI: http://localhost:8025  (SMTP on localhost:1025 - matches backend/.env.example)
+services:
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: shop
+      POSTGRES_PASSWORD: shop
+      POSTGRES_DB: shop
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
